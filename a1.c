@@ -34,7 +34,7 @@
 //
 int countWords(const char *input)
 {
-    char copy[20];
+    char copy[21];
     strcpy(copy, input);
     int word_counter = 0;
     char *token = strtok(copy, " \t\n"); // Tokenize using space, tab, and newline
@@ -97,7 +97,7 @@ void printGuessedLetters(const char *guessed_letters)
 int initializeGame(char *intial_word, char *guessed_letters)
 {
     printf(INTIAL_WORD_MESSAGE);
-    fgets(intial_word, 20, stdin);
+    fgets(intial_word, 21, stdin);
     if (!countWords(intial_word))
     {
         return 1;
@@ -125,7 +125,7 @@ int initializeGame(char *intial_word, char *guessed_letters)
 int mainGame(char *intial_word, char *guessed_letters, char *letters)
 {
     int attempts_left = MAX_ATTEMPTS_NUMBER;
-    char letter[20];
+    char letter[21];
     int found_flag;
     int all_guessed_flag;
 
@@ -202,8 +202,8 @@ int mainGame(char *intial_word, char *guessed_letters, char *letters)
 //
 int main()
 {
-    char intial_word[20];
-    char guessed_letters[20];
+    char intial_word[21];
+    char guessed_letters[21];
     char letters[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     if (initializeGame(intial_word, guessed_letters))
     {
